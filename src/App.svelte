@@ -9,7 +9,7 @@
 
 <main class="bg-gray-800 h-screen flex flex-col items-center p-32">
   {#if !success}
-    <NextButton on:success={handleSuccess} />
+    <NextButton delay={5000} on:success={handleSuccess} />
   {/if}
   {#if success}
     <div class="text-white font-semibold mt-4">Next episode launched!</div>

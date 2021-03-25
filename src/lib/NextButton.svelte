@@ -3,11 +3,10 @@
   import { createNextButtonMachine } from "./machine";
   import { createEventDispatcher } from "svelte";
 
+  export let delay;
   const dispatch = createEventDispatcher();
 
-  const DELAY = 5000;
-
-  const nextButtonMachine = createNextButtonMachine(DELAY, () => {
+  const nextButtonMachine = createNextButtonMachine(delay, () => {
     console.log("SUCCESS!");
     dispatch("success");
   });
@@ -31,7 +30,7 @@
     id="inner"
     class="absolute w-full top-0 bottom-0 right-full bg-white"
     style={$nextButtonService.matches("auto") &&
-      `transition: ${DELAY}ms linear 0s; transform: translate(100%)`}
+      `transition: ${delay}ms linear 0s; transform: translate(100%)`}
   />
 </button>
 
